@@ -1,0 +1,17 @@
+<div class="container-fluid pt-3">
+  <form [formGroup]="submitForm" (ngSubmit)="addMovie(submitForm.value)" class="row no-gutters">
+    <mat-form-field appearance="fill" class="col-12">
+      <mat-label for="title">Titre</mat-label>
+      <input matInput type="text" id="title" formControlName="title">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-12">
+      <mat-label for="descritpion">Description</mat-label>
+      <textarea matInput rows="5" id="description" formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-12">
+      <mat-label for="title">URL de l'affiche</mat-label>
+      <input matInput type="text" id="poster" formControlName="poster">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" class="col-12">Valider</button>
+  </form>
+</div>

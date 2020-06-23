@@ -1,0 +1,8 @@
+<div class="container-fluid pt-3">
+  <div class="d-flex flex-wrap">
+    <div *ngFor="let movie of movies" class="d-flex flex-column justify-content-center mr-2">
+      <img src="{{ movie.poster }}" class="img-fluid poster">
+      <span>{{ movie.title }}</span>
+    </div>
+  </div>
+</div>
