@@ -20,9 +20,10 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { EditMovieComponent } from './edit-movie/edit-movie.component';
 
 @NgModule({
-  declarations: [ AppComponent, DashboardComponent, NavigationComponent, AddMovieComponent ],
+  declarations: [ AppComponent, DashboardComponent, NavigationComponent, AddMovieComponent, EditMovieComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,

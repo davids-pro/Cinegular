@@ -1,0 +1,19 @@
+<div class="container-fluid pt-3">
+  <div class="row no-gutters">
+    <mat-form-field appearance="fill" class="col-12">
+      <mat-label for="title">Titre</mat-label>
+      <input matInput type="text" id="title" required [(ngModel)]="movie.title">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-12">
+      <mat-label for="descritpion">Description</mat-label>
+      <textarea matInput rows="5" id="description" required [(ngModel)]="movie.description"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-12">
+      <mat-label for="title">URL de l'affiche</mat-label>
+      <input matInput type="text" id="poster" required [(ngModel)]="movie.poster">
+    </mat-form-field>
+    <div class="col-12 d-flex mt-4">
+      <button mat-raised-button color="primary" class="flex-fill" (click)="editMovie()">Mettre à jour</button>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { Movie } from '../movie.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-movie',
@@ -10,11 +10,12 @@ import { Router } from '@angular/router';
 })
 export class AddMovieComponent implements OnInit {
   movie = new Movie();
-  submitForm: any;
 
-  constructor(private moviesService: MoviesService, private router: Router) {}
+  constructor(private moviesService: MoviesService, private router: Router, private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   addMovie() {
     if (

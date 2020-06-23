@@ -17,4 +17,16 @@ export class MoviesService {
   createMovie(movie: Movie) {
     return this.http.post(this.uri, movie);
   }
+
+  getMovieById(id: string) {
+    return this.http.get(`${this.uri}/${id}`);
+  }
+
+  updateMovie(movie: any, id: string) {
+    return this.http.put(`${this.uri}/${id}`, movie);
+  }
+
+  deleteMovie(id: string) {
+    return this.http.delete(`${this.uri}/${id}`);
+  }
 }
