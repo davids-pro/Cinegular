@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
+import { Movie } from '../movie.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,14 +9,14 @@ import { MoviesService } from '../movies.service';
 })
 export class DashboardComponent implements OnInit {
   title = 'Cinegular';
-  movies;
+  movies: any;
 
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {
     this.moviesService.getAllMovies().subscribe((movies) => {
       this.movies = movies;
-      console.log(this.movies);
+      this.movies = this.movies.sort((a, b) => a.title.localeCompare(b.title));
     });
   }
 }

@@ -16,14 +16,13 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { HomeComponent } from './home/home.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [ AppComponent, DashboardComponent, NavigationComponent, HomeComponent, AddMovieComponent ],
+  declarations: [ AppComponent, DashboardComponent, NavigationComponent, AddMovieComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,

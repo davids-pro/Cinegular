@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { MoviesService } from '../movies.service';
 import { Movie } from '../movie.model';
 import { Router } from '@angular/router';
@@ -10,24 +9,28 @@ import { Router } from '@angular/router';
   styleUrls: [ './add-movie.component.scss' ]
 })
 export class AddMovieComponent implements OnInit {
+  movie = new Movie();
   submitForm: any;
 
-  constructor(private moviesService: MoviesService, private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private moviesService: MoviesService, private router: Router) {}
 
-  ngOnInit() {
-    this.submitForm = this.formBuilder.group({
-      title: '',
-      description: '',
-      poster: ''
-    });
-  }
+  ngOnInit() {}
 
-  addMovie(movie: Movie) {
-    this.moviesService.createMovie(movie).subscribe(
-      () => {
-        this.router.navigate([ '/movies' ]);
-      },
-      (err) => console.log(err)
-    );
+  addMovie() {
+    if (
+      this.movie.title !== undefined &&
+      this.movie.description !== undefined &&
+      this.movie.poster !== undefined &&
+      this.movie.title !== '' &&
+      this.movie.description !== '' &&
+      this.movie.poster !== ''
+    ) {
+      this.moviesService.createMovie(this.movie).subscribe(
+        () => {
+          this.router.navigate([ '/movies' ]);
+        },
+        (err) => console.log(err)
+      );
+    }
   }
 }
