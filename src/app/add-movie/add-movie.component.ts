@@ -27,7 +27,7 @@ export class AddMovieComponent implements OnInit {
     ) {
       this.moviesService.createMovie(this.movie).subscribe(
         () => {
-          this.router.navigate([ '/movies' ]);
+          this.router.navigate([ '/films' ]);
         },
         (err) => console.log(err)
       );
